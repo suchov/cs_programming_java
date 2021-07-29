@@ -7,5 +7,9 @@ public class App {
 	b = t;
 	System.out.println(a);
 	System.out.println(b);
+
+	int y = (int)0.25;
+	
+	System.out.println(y);
     }
 }
