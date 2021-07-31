@@ -7,7 +7,7 @@ public class ThreeSort {
         // compute stats
         int min    = Math.min(a, Math.min(b, c));
         int max    = Math.max(a, Math.max(b, c));
-	// add all 3 and substract max and min
+	    // add all 3 and substract max and min
         int median = a + b + c - min - max;
 
         // print stats
