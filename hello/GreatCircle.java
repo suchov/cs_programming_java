@@ -6,18 +6,11 @@
 
 public class GreatCircle {
     public static void main(String[] args) {
-        double lat1 = Double.parseDouble(args[0]);
-        double lon1 = Double.parseDouble(args[1]);
-        double lat2 = Double.parseDouble(args[2]);
-        double lon2 = Double.parseDouble(args[3]);
-
-        // https://en.wikipedia.org/wiki/Haversine_formula
-        final int R = 6371; // Radious of the earth
-        Double latDistance = Math.toRadians(lat2-lat1);
-        Double lonDistance = Math.toRadians(lon2-lon1);
-        Double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2) + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
-        Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        Double distance = R * c;
+        double x1 = Math.toRadians (Double.parseDouble(args[0]));
+        double y1 = Math.toRadians (Double.parseDouble(args[1]));
+        double x2 = Math.toRadians (Double.parseDouble(args[2]));
+        double y2 = Math.toRadians (Double.parseDouble(args[3]));
+        double distance = 2 * 6371.0 * Math.asin(Math.sqrt(Math.pow(Math.sin((x2-x1)/2), 2) + (Math.cos(x1) * Math.cos(x2) * Math.pow(Math.sin((y2-y1)/2), 2))));
         System.out.println(distance + " kilometers");
     }
 }
